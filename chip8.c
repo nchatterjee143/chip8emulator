@@ -14,6 +14,7 @@ typedef struct {
     uint32_t window_height;
     uint32_t fg_color;
     uint32_t bg_color;
+    uint32_t scale_factor;
 } config_t;
 
 bool init_sdl(sdl_t *sdl, const config_t config) {
@@ -22,7 +23,7 @@ bool init_sdl(sdl_t *sdl, const config_t config) {
         return false;
     }
 
-    sdl->window = SDL_CreateWindow("Chip-8 Emulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, config.window_width, config.window_height, 0);
+    sdl->window = SDL_CreateWindow("Chip-8 Emulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, config.window_width * config.scale_factor, config.window_height * config.scale_factor, 0);
     if (!(sdl->window)) {
         SDL_Log("Unable to create window: %s\n", SDL_GetError());
         return false;
@@ -43,7 +44,8 @@ bool set_config_from_args(config_t *config, const int argc, char **argv) {
         .window_width = 64, // chip-8 width
         .window_height = 32, // chip-8 height
         .fg_color = 0xFFFFFFFF, // white
-        .bg_color = 0xFFFF00FF // yellow
+        .bg_color = 0xFFFF00FF, // yellow
+        .scale_factor = 20
     };
 
     // overrides

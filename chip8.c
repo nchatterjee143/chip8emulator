@@ -23,7 +23,12 @@ bool init_sdl(sdl_t *sdl, const config_t config) {
         return false;
     }
 
-    sdl->window = SDL_CreateWindow("Chip-8 Emulator", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, config.window_width * config.scale_factor, config.window_height * config.scale_factor, 0);
+    sdl->window = SDL_CreateWindow("Chip-8 Emulator", 
+                                    SDL_WINDOWPOS_CENTERED, 
+                                    SDL_WINDOWPOS_CENTERED, 
+                                    config.window_width * config.scale_factor, 
+                                    config.window_height * config.scale_factor, 
+                                    0);
     if (!(sdl->window)) {
         SDL_Log("Unable to create window: %s\n", SDL_GetError());
         return false;
@@ -95,6 +100,9 @@ int main(int argc, char **argv) {
         puts("SDL initialized successfully! Cleaning up...");
     }
 
+    // initial window clear
+    clear_window(sdl, config);
+
     // main emulator loop
     while (true) {
         // get_time();
@@ -105,9 +113,6 @@ int main(int argc, char **argv) {
         SDL_Delay(16); // approx 60 fps
         update_screen(sdl);
     }
-
-    // initial window clear
-    clear_window(sdl, config);
 
     // final cleanup
     final_cleanup(sdl);

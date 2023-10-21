@@ -78,10 +78,6 @@ void clear_window(const sdl_t sdl, const config_t config) {
     SDL_RenderClear(sdl.renderer);
 }
 
-void update_screen(const sdl_t sdl) {
-    SDL_RenderPresent(sdl.renderer);
-}
-
 int main(int argc, char **argv) {
     sdl_t sdl = {0};
     config_t config = {0};
@@ -105,13 +101,22 @@ int main(int argc, char **argv) {
 
     // main emulator loop
     while (true) {
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                break;
+            }
+        }
+
+        clear_window(sdl, config);
+
         // get_time();
         // Emulate chip-8 instructions
         // get_time() since last get_time();
 
         // SDL_Delay(16.67 - actual time elapsed);
         SDL_Delay(16); // approx 60 fps
-        update_screen(sdl);
+        SDL_RenderPresent(sdl.renderer);
     }
 
     // final cleanup

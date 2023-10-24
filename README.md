@@ -6,7 +6,7 @@ This is still a WIP. Started on October 16th, 2023.
 # Requirements
 
 1. [Homebrew](https://brew.sh/)
-2. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2` in your terminal)
+2. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2` in Terminal)
 
 # Instructions
 1.  `git clone` this repo in Terminal.

@@ -5,7 +5,7 @@ This is still a WIP. Started on October 16th, 2023.
 
 # Requirements
 
-1. [Homebrew](https://brew.sh/)
+1. [Homebrew](https://www.brew.sh/)
 2. [GNU Make](https://www.gnu.org/software/make/manual/make.html)
 3. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2`)
 

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "SDL.h"
+#include <SDL2/SDL.h>
 
 typedef struct {
     SDL_Window *window;
@@ -69,10 +69,10 @@ void final_cleanup(const sdl_t sdl) {
 }
 
 void clear_window(const sdl_t sdl, const config_t config) {
-    const uint8_t r = (config.bg_color >> 24) & 0xFF;
-    const uint8_t g = (config.bg_color >> 16) & 0xFF;
-    const uint8_t b = (config.bg_color >> 8) & 0xFF;
-    const uint8_t a = (config.bg_color >> 0) & 0xFF;
+    const uint8_t r = (config.bg_color >> 24) & 0xF0;
+    const uint8_t g = (config.bg_color >> 16) & 0xF0;
+    const uint8_t b = (config.bg_color >> 8) & 0xF0;
+    const uint8_t a = (config.bg_color >> 0) & 0xF0;
 
     SDL_SetRenderDrawColor(sdl.renderer, r, g, b, a);
     SDL_RenderClear(sdl.renderer);

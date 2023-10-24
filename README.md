@@ -11,5 +11,8 @@ This is still a WIP. Started on October 16th, 2023.
 # Instructions
 1.  `git clone` this repo in Terminal.
 2.  `cd` to the directory.
-3.  `make`
+3.  `make` or `make release`
 4.  `./chip8emulator (path to ROM)`
+
+# Uninstall
+1. `make clean`

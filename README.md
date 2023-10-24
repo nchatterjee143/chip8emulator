@@ -5,8 +5,9 @@ This is still a WIP. Started on October 16th, 2023.
 
 # Requirements
 
-1. [GNU Make](https://www.gnu.org/software/make/manual/make.html)
-2. [SDL2](https://www.libsdl.org/)
+1. [Homebrew](brew.sh/)
+2. [GNU Make](https://www.gnu.org/software/make/manual/make.html)
+3. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2`)
 
 # Instructions
 1.  `git clone` this repo.

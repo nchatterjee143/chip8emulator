@@ -6,11 +6,10 @@ This is still a WIP. Started on October 16th, 2023.
 # Requirements
 
 1. [Homebrew](https://www.brew.sh/)
-2. [GNU Make](https://www.gnu.org/software/make/manual/make.html)
-3. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2`)
+2. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2` in your terminal)
 
 # Instructions
-1.  `git clone` this repo.
-2.  `cd` in Terminal or iTerm to the directory.
+1.  `git clone` this repo in Terminal.
+2.  `cd` to the directory.
 3.  `make`
 4.  `./chip8emulator (path to ROM)`

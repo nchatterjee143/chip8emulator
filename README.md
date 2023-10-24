@@ -5,7 +5,7 @@ This is still a WIP. Started on October 16th, 2023.
 
 # Requirements
 
-1. [Homebrew](https://www.brew.sh/)
+1. [Homebrew](https://brew.sh/)
 2. [SDL2](https://www.libsdl.org/) (Do `brew install sdl2` in your terminal)
 
 # Instructions
@@ -15,4 +15,5 @@ This is still a WIP. Started on October 16th, 2023.
 4.  `./chip8emulator (path to ROM)`
 
 # Uninstall
-1. `make clean`
+1. `cd` to project directory.
+2. `make clean`
